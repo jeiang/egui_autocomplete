@@ -237,6 +237,7 @@ where
 
         // create the popup object
         let popup = Popup::from_response(&text_response)
+            .kind(egui::PopupKind::Tooltip)
             .layout(egui::Layout::top_down_justified(egui::Align::LEFT))
             .close_behavior(PopupCloseBehavior::IgnoreClicks)
             .id(id)
@@ -308,7 +309,7 @@ where
 
         state.store(ui.ctx(), id);
 
-        text_response
+        text_response.response
     }
 }
 
